@@ -1,12 +1,12 @@
 # MakeUrTrend : génération de lyrics - Projet Deep Learning 2024 
 
 MakeURtrend est une intelligence artificielle qui a pour objectif de générer des paroles de chansons tendances to make your own trend. 
-Rentrez une date du top 100 Billboard que vous souhaitez et générez vos paroles de musiques basée sur ce top 100! 
+Rentrez une date du top 100 Billboard et le début de la musique que vous souhaitez générer. 
 
-## Modèle
+## Modèles
 
-Cette IA utilise l'architecture d'un décodeur transformers, plus précisément GPT-2, disponible dans la bibliothèque Hugging Face. 
-Le résultat du modèle entraîné est présenté 
+- Cette IA utilise l'architecture d'un décodeur transformers, plus précisément GPT-2, disponible dans la bibliothèque Hugging Face. 
+- Le résultat du modèle entraîné est présenté au moyen d'une interface web avec d'un côté une interface programmatique utilisable par un serveur ASGI, et de l'autre, une interface utilisateur. 
 
 ### Corpus 
 
