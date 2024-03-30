@@ -1,8 +1,14 @@
-# Projet Deep Learning 2024 : génération de lyrics
+# MakeUrTrend : génération de lyrics - Projet Deep Learning 2024 
 
-Plus besoin de s'épuiser pour écrire une chanson tendance, faites confiance à une IA.
+MakeURtrend est une intelligence artificielle qui a pour objectif de générer des paroles de chansons. Elle tire parti d'un modèle basé sur l'architecture des transformers, plus précisément GPT-2, disponible sur Hugging Face. 
+
+### Corpus 
+
+Cette IA a été entraînée sur une vaste quantité de données comprenant des paroles de chansons populaires, lui permettant ainsi de comprendre les structures linguistiques et les styles musicaux. En fournissant un mot clé ou une première strophe, l'utilisateur peut solliciter la création de paroles de chanson correspondant à ses préférences. Ce processus de génération automatique offre une solution pratique et rapide pour les artistes en herbe ou les professionnels cherchant l'inspiration pour leurs créations musicales.
 
 
+
+### Codes
 
 
 ### Interface web 
