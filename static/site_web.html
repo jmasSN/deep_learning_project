@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Générateur de Paroles de Chanson</title>
+<link rel="stylesheet" href="styles.css">
+
+<!-- Intégration de la police Fredericka the Great -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+
+<style>
+.fredericka-the-great-regular {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+</head>
+<body>
+  <header style="margin: 20px 20px; text-align: right;">
+  <div id="deep-learning-text" style="margin: 20px 20px; text-align: left;">DeepLearning Project <br> Amina Bouteldja <br> Juliette Massy <br> Yaasmine Nohur</div>
+    <nav>
+      <ul>
+        <li><a href="#Generation">Home</a></li>
+        <li><a href="#Objectifs">Objectifs</a></li>
+        <li><a href="#documentation">Documentation</a></li>
+        <li><a href="#resultats">Résultats</a></li>
+
+      </ul>
+
+    </nav>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    var scrollLinks = document.querySelectorAll('.link');
+
+    scrollLinks.forEach(function(scrollLink) {
+        scrollLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            var targetId = this.getAttribute('href');
+            var targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                var offsetTop = targetElement.offsetTop;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+</script>
+<script>
+function scrollToSection() {
+    document.querySelector('#parameters').scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+</script>
+
+  </header>
+  <div id="Generation" class="background-container">
+    <br><br><br>
+    <h2 class="fredericka-the-great-regular">MakeURtrend</h2>
+    <p><br><br></p>
+    <h1>MakeURtrend constitue la révolution musicale que vous attendiez ! <br> S’adressant à ceux qui souhaitent créer un hit en un clic, notre générateur de paroles de chansons vous permet d’associer style et qualité grâce à son entraînement sur les plus grands hits du siècle. Donnez lui votre premier mot ou votre première strophe et notre modèle se chargera de générer <strong> LE </strong >tube dont vous rêviez.  <br>  Il ne vous reste ensuite plus qu’à créer une mélodie, enregistrer la musique, enregistrer le chant, imaginer, tourner et monter un clip, le publier, en faire la publicité et avoir beaucoup de chance et à vous les projecteurs !</h1>
+
+
+    <p><br> <br> <br></p>
+
+    <button class="neon-button" onclick="scrollToSection()">Me tester</button>
+
+
+      <p><br> <br> <br><br> <br> <br><br> <br> <br></p>
+
+    <div class="container">
+       <div id="parameters"> <br><br>
+        <h4>Choisis tes paramètres ! </h4>
+        
+        
+         <form action="http://localhost:8000/dataset" method="POST" id="inputForm"><br>
+    <label for="sentence" style="color: white; font-size: 20px;">Rentre la date du top 100 billboard que tu veux sous la forme YYYY-MM-DD <br> Attends la notification de chargement du dataset avant de lancer la génération de ton tube ! </label><br><br>
+    <input name="sentence" id="sentence" value="2022-05-14" /><br><br>
+    <button type="submit">Envoyer</button>
+  	</form>
+ <div id="result"></div>
+
+
+  <form action="http://localhost:8000/generate" method="POST" id="PromptForm"><br><br><br><br><br>
+    <label for="prompt" style="color: white; font-size: 20px;">Rentre le début de la musique que tu veux générer ! <br> Ca va prendre un peu de temps... mais comme on dit doucement mais surement !</label><br><br>
+    <input name="prompt" id="prompt" value="I am" /><br><br>
+    <button type="submit">Génére ton tube ! </button>
+
+  </form>
+ 
+ <div id="results"></div>
+      </div>
+      <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+    </div>
+  </div>
+    <p><br><br><br><br><br><br></p>
+    <p><br><br><br><br><br><br></p>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+
+<div class="encadrement">
+  <div id="Objectifs">
+  <hr><br><br><br>
+    <h2 class="fredericka-the-great-regular2">Objectifs</h2>
+    <hr><br><br><br>
+    <h1>Dans un monde plus que jamais sujet aux tendances et autres effets de mode, difficile de se distinguer pour atteindre le sommet des charts musicaux. <br> C’est pourquoi nous proposons, avec MakeURtrend une approche innovative à la création de chanson. <br><br> L’objectif est d’ apprendre des chansons déjà populaires pour créer le hit parfait. MakeURtrend permet ainsi de générer automatiquement des paroles de musiques à la suite d’un prompt entré par l’utilisateur. <br>Le format généré répond ainsi à certains critères de formes comme la division du texte en strophes et la génération de tournures de langage similaires à ce qui peut se faire en chansons.
+
+L’idée de MakeURtrend nous est venue rapidement, notamment avec l’influence avérée des réseaux sociaux sur la création musicale. Sortir une musique aujourd'hui repose souvent sur le respect de certaines règles, plus ou moins tacites. Il s’agit de créer un moment pouvant devenir viral et de laisser Internet faire son travail. Cela peut passer par la mélodie, le rythme, mais aussi par les paroles. </h1>
+  </div>
+   <br> <br> <br>
+  <div id="documentation">
+  <hr><br><br><br>
+    <h2 class="fredericka-the-great-regular2">Documentation</h2>
+    <hr><br><br><br>
+    <h1>Ce projet a été réalisé par Amina Bouteldja, Yaasmine Nohur de l’université Paris Nanterre et Juliette Massy  de l’université Sorbonne Nouvelle dans le cadre du cours de Réseaux de Neurones du M2 TAL.  
+      <br>
+      La répartition des tâches a ainsi pu se faire aisément malgré quelques difficultés techniques en cours de route. Nous avons donc travaillé conjointement pour la création du modèle dans un environnement Google Colab qui nous donnait accès à une GPU nécéssaire à l’entraînement du modèle. <br> Yaasmine s’est ensuite occupée du visuel (html/css) de notre interface pendant qu’Amina gérait l’API en lien avec le cours Interfaces Web et que Juliette rédigeait la documentation.
+      <p>
+        Concernant les aspects techniques plus poussés, deux questions se sont posées une fois l’idée du projet trouvée :  <br> <br><br> <br> <strong> + QUEL MODÈLE UTILISER ? </strong> <br>
+        <br>  L’idée étant de fine tuner un modèle génératif sur notre tâche, une multitude de choix s’offraient à nous et notre premier choix s’est porté sur LLaMA7b car il s'agit d'un modèle open source et très performant. Malheureusement, la taille du modèle a rendu impossible son utilisation étant donnée nos moyens techniques. Nous avons donc décidé de basculer vers une version distillée de GPT-2, DistilGPT2. Ce modèle est basé sur l'architecture Transformers, disponible dans la bibliothèque HuggingFace.  <br><br>
+        <br> <br><strong> + QUELLES DONNÉES UTILISER ? </strong><br><br>
+        Concernant les données utilisées, celles-ci correspondent aux paroles des chansons du top 100 Billboard présentes à la date rentrée par l’utilisateur. Laisser le choix de la date d’extraction des chansons à l’utilisateur permet de le laisser générer des paroles de style varié. <br>
+        <br>
+        Une première API (Billboard100) a été utilisée afin de récupérer le Chart des 100 premières musiques du Billboard. Ces données correspondent aux titres de la musique associée à leurs artistes.
+        <br>
+        Ensuite, une deuxième API (LyricsOVH ) nous a permis, sur la base du nom de la musique et de l'artiste, de récuperer les paroles de cette chanson.
+        Seules les paroles ont été conservées pour créer le dataset qui correspond à un fichier texte contenant l’intégralité des paroles du top 100.  <br> <br>
+        Aucun traitement supplémentaire, excepté la suppression du titre, n’a été nécéssaire sur les données et c’est la division en paragraphe qui est utilisé pour tokeniser. <br>
+        Selon le TopChart du Billboard, les données peuvent être multilingues.</h1>
+      </p>
+    </div>
+     <br> <br> <br>
+    <div id="resultats">
+    <hr><br><br><br>
+      <h2 class="fredericka-the-great-regular2">Résultats et perspectives</h2>
+      <hr><br><br><br>
+      <h1>
+     <br><strong> + RÉSULTATS </strong><br><br>
+          Le modèle final produit des textes dont la forme répond bien aux critères existants pour les paroles de chansons. On peut néanmoins regretter les répétitons dans le texte généré et le manque de d'originalité d'une génération à l'autre. Comme évoqué précédemment, les contraintes techniques ne nous ont pas permises d'utiliser de modèle plus performant ce qui aurait pu apporter un gain de qualité considérable à la génération. En effet, malgré les tests de paramètres effectués, il a été difficile d'atteindre une véritable amélioration de la génération et la loss du modèle restait supérieure à 1. <br><br> <br><strong> + PERSPECTIVES </strong><br><br>
+          Des pistes d'améliorations seraient donc un modèle plus performant testé sur des appareils adaptés mais aussi un corpus plus conséquent et annoté en genre ou selon les sujet évoqués dans les chanson afin de faire des générations plus poussées. Enfin, il pourrait être intéressant de réaliser la même tâche pour une langue différente afin de voir le résultat obtenu.</h1>
+      </h1>
+    </div>
+</div>
+
+
+
+
+</body>
+<script>
+  document.querySelector("#inputForm").onsubmit = async (event) => {
+      event.preventDefault()
+      const form = event.target
+
+      const data = {
+          sentence: form.querySelector("#sentence").value,
+      }
+
+
+      const response = await fetch(
+          "http://localhost:8000/dataset",
+          {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+          },
+      )
+
+      const text = await response.text() // read response body as text
+      document.querySelector("#result").innerHTML = text
+  }
+  
+    document.querySelector("#PromptForm").onsubmit = async (event) => {
+      event.preventDefault()
+      const form = event.target
+
+      const datae = {
+          prompt: form.querySelector("#prompt").value,
+      }
+
+      const response = await fetch(
+          "http://localhost:8000/generate",
+          {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(datae),
+          },
+      )
+
+      const text = await response.text() // read response body as text
+      document.querySelector("#results").innerHTML = text
+  }
+</script>
+
+</html>
